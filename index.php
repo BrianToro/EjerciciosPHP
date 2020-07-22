@@ -8,7 +8,22 @@
 <body>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">Datos del mundial</a>
+    <?php
+        if(isset($_GET['name'])){
+            echo '<a class="nav-link active" href="./index.php">Cerrar sesion</a>';
+        } else {
+            echo '<a class="nav-link active" href="./login.php">Iniciar Sesion</a>
+                <a class="nav-link active" href="./register.php">Registrarse</a>';
+        }
+    ?>
 </nav>
+<?php
+    if(isset($_GET['name'])){
+        echo '<div style="margin-top: 5%">
+                <h1 style="text-align: center;">Hola '.$_GET['name'].'</h1>
+            </div>';
+    } 
+?>
 <div class="card" style="margin: 20%; margin-top: 10%;">
     <div class="card-body">
         <form action="index.php" method="POST">
